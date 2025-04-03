@@ -3,12 +3,12 @@
 #include "MotorControl.hpp"
 
 /*For fine tune the motor bias*/
-uint16_t RightSpeedBias      = 0; 
-uint16_t LeftSpeedBias       = 0; 
+uint16_t RightSpeedBias      = 100; 
+uint16_t LeftSpeedBias       = 100; 
 
 /*For extra power to turning Left or Right*/
-uint16_t TurnRightExtraSpeed = 0; //200
-uint16_t TurnLeftExtraSpeed  = 0; //200
+uint16_t TurnRightExtraSpeed = 300; //200
+uint16_t TurnLeftExtraSpeed  = 300; //200
 
 //PWM Setting 
 struct PWM_t{ 
@@ -72,12 +72,12 @@ void Motor::Moving_Clockwise(uint16_t Speed, uint8_t Wheel){
   if(Wheel == 1 ){
     ledcWrite(Motor_R_IN1, Speed);
     ledcWrite(Motor_R_IN2, 0);
-    delay(1);
+    //delay(1);
   }
   if(Wheel == 2){
     ledcWrite(Motor_L_IN1, Speed);
     ledcWrite(Motor_L_IN2, 0);
-    delay(1);
+    //delay(1);
   }
 };
 
@@ -85,13 +85,13 @@ void Motor::Moving_AntiClockwise(uint16_t Speed, uint8_t Wheel){
   if(Wheel == 1 ){
     ledcWrite(Motor_R_IN1, 0);
     ledcWrite(Motor_R_IN2, Speed);
-    delay(1);
+    //delay(1);
   }
 
   if(Wheel == 2){
     ledcWrite(Motor_L_IN1, 0);
     ledcWrite(Motor_L_IN2, Speed);
-    delay(1);
+    //delay(1);
   }
 };
 
@@ -125,8 +125,8 @@ void Motion::Backwards(uint16_t Speed){
 
 void Motion::Rightwards(uint16_t Speed){
   /*If the two Wheels have bias, adjust one of the speed of the Wheel*/
-  Motor::Moving_Clockwise(Speed + RightSpeedBias + TurnRightExtraSpeed+300, RightWheel );//+300
-  Motor::Moving_AntiClockwise(Speed + LeftSpeedBias + TurnRightExtraSpeed-200, LeftWheel);//-300
+  Motor::Moving_Clockwise(Speed + RightSpeedBias + TurnRightExtraSpeed, RightWheel );//+300
+  Motor::Moving_AntiClockwise(Speed + LeftSpeedBias + TurnRightExtraSpeed+600, LeftWheel);//-300
 
   //Fix the Servo Motor to 135 deg all the time
   Servo::TrunDeg(135);
@@ -135,8 +135,8 @@ void Motion::Rightwards(uint16_t Speed){
 
 void Motion::Leftwards(uint16_t Speed){
   /*If the two Wheels have bias, adjust one of the speed of the Wheel*/
-  Motor::Moving_AntiClockwise(Speed + RightSpeedBias + TurnLeftExtraSpeed-100, RightWheel);//-50
-  Motor::Moving_Clockwise(Speed + LeftSpeedBias + TurnLeftExtraSpeed, LeftWheel);
+  Motor::Moving_AntiClockwise(Speed + RightSpeedBias + TurnLeftExtraSpeed+100, RightWheel);//-100
+  Motor::Moving_Clockwise(Speed + LeftSpeedBias + TurnLeftExtraSpeed+100, LeftWheel);//0
 
   //Fix the Servo Motor to 45 deg all the time
   Servo::TrunDeg(45);

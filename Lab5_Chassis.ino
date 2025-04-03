@@ -8,10 +8,10 @@
 /*Task 3: Simple Blinking Testing Code
   Task 4: Motor Driver Testing Code
   Task 5: Line Tracking Task*/
-volatile uint8_t  Task  = 4 ; 
+volatile uint8_t  Task  = 5 ; 
 
 /*You can change the Speed of the Motor*/
-volatile uint16_t Speed = 256; // 0 -1024
+volatile uint16_t Speed = 128; // 0 -1024
 
 
 /*Starting Point Counter*/
