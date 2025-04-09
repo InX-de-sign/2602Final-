@@ -11,7 +11,7 @@
 volatile uint8_t  Task  = 5 ; 
 
 /*You can change the Speed of the Motor*/
-volatile uint16_t Speed = 128; // 0 -1024
+volatile uint16_t Speed = 175; // 0 -1024
 
 
 /*Starting Point Counter*/
@@ -111,8 +111,6 @@ while(Start && Task !=3){
   LineTracking::FollowingLine(IR::Tracking(), Speed);
   }
 
-
-  
   if(Task < 5)
   blinking();
 /*DO NOT Chnage the code above*/

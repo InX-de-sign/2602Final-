@@ -11,13 +11,12 @@
 #define IR_Finish       5
 
 #define AllOnTrack      6
+#define SlowOnTrack      7
 
 namespace IR {
   void Init();
   bool OnStartingLine();
   uint8_t Tracking();
-
-
 };
 
 #endif
