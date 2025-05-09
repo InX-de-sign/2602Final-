@@ -9,6 +9,7 @@
 #define IR_LOnTrack 3 
 #define IR_Finish   4
 #define AllOnTrack  5
+#define SlowOnTrack 6
 
 /*define sound speed in m*/
 #define SOUND_SPEED 340
