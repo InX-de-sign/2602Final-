@@ -38,7 +38,7 @@ uint8_t IR::Tracking(){ //!light
     //return AllOnTrack;
   //L_IR and R_IR are on Track 101 --010
   if( !L && M && !R){// || (digitalRead(IR_M) && (digitalRead(IR_L)) && (digitalRead(IR_R))))
-    return IR_LandROnTrack;}
+    return OnTrack;}
     //return AllOnTrack;
   //All on Track 111 --000allwhite stop
   if(!L && !M && !R){
