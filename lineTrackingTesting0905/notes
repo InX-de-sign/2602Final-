@@ -1,0 +1,5 @@
+codes for testing lineTracking part, based on codes and tested parameters from lab5
+
+TODOs:
+  1. test and find out parameters for newly added functions float RPMtoPWM(float TargetRPM, uint8_t Wheel); in Motor.c/hpp
+      - TargetPWM = ((TargetRPM - 400.0f)/20.0f) * 60.0f ; //need to test 
