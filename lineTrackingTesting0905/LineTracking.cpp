@@ -51,12 +51,6 @@ void LineTracking::FollowingLine( uint8_t Case, uint16_t Speed ){
     Motor::Stop();
     delay(5); //You may change the delay duration 
   break;
-  
-  case IR_LandROnTrack:
-    Motion::Forwards(Speed);
-    //error = (prevError > 0) ? 2.0 : -2.0; // Aggressive correction
-    delay(5); //You may change the delay duration 
-  break;
 
   case OutOfTrack:
     Motion::Backwards(Speed);
