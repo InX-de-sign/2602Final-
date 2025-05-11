@@ -1,0 +1,5 @@
+1. task1-4 code complete
+2. need testing on IR sensors after changing the middle one.
+3. start from task1 (9-2-1) and see whether it goes straight forward in node2
+4. fine tune PID values (in ChassisSkeletonCoded.cpp line595-606) by using the bridge: 
+    - start from tuning kp first (with correct kp, the car can go onto the bridge already)
