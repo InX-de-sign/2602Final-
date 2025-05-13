@@ -1,4 +1,4 @@
 1. tested:task1-3 (task3 case1), 
 2. task3 doesn't read well on path node10-5
 3. to be tested: task4
-4. to be tuned: PID, encoder reading, rpm pwm reading
+4. to be tuned: PID, encoder reading, rpm pwm reading, IMU
