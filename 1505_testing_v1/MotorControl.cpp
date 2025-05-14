@@ -152,6 +152,7 @@ float Motor::RPMtoPWM(float TargetRPM, uint8_t Wheel)
   return TargetPWM;
 };
 
+//OnTrack
 void Motion::Forwards(uint16_t LeftSpeed,uint16_t RightSpeed)
 {
   /*If the two Wheels have bias, adjust one of the speed of the Wheel*/
@@ -162,15 +163,17 @@ void Motion::Forwards(uint16_t LeftSpeed,uint16_t RightSpeed)
   Servo::TurnDeg(90);
 };
 
+//OutOfTrack
 void Motion::Backwards(uint16_t LeftSpeed,uint16_t RightSpeed)
 {
   /*If the two Wheels have bias, adjust one of the speed of the Wheel*/
-  Motor::Moving_Clockwise(LeftSpeed + LeftSpeedBias, RightSpeed + RightSpeedBias,LeftWheel);
-  Motor::Moving_Clockwise(LeftSpeed + LeftSpeedBias,RightSpeed + RightSpeedBias, RightWheel); //
+  Motor::Moving_Clockwise(LeftSpeed + LeftSpeedBias, RightSpeed + RightSpeedBias, LeftWheel);
+  Motor::Moving_Clockwise(LeftSpeed + LeftSpeedBias, RightSpeed + RightSpeedBias, RightWheel); //
   // Fix the Servo Motor to 90 deg all the time
   Servo::TurnDeg(90);
 };
 
+//IR_LOnTrack
 void Motion::Leftwards(uint16_t LeftSpeed,uint16_t RightSpeed)
 {
   /*If the two Wheels have bias, adjust one of the speed of the Wheel*/
@@ -180,6 +183,7 @@ void Motion::Leftwards(uint16_t LeftSpeed,uint16_t RightSpeed)
   Servo::TurnDeg(45);
 };
 
+//IR_ROnTrack
 void Motion::Rightwards(uint16_t LeftSpeed,uint16_t RightSpeed)
 {
   //Serial.println("Motion::Rightwards");
@@ -190,6 +194,7 @@ void Motion::Rightwards(uint16_t LeftSpeed,uint16_t RightSpeed)
   Servo::TurnDeg(135);
 }
 
+//R_90
 void Motion::Rightwards_90(uint16_t LeftSpeed,uint16_t RightSpeed)
 {
   /*If the two Wheels have bias, adjust one of the speed of the Wheel*/
@@ -199,6 +204,7 @@ void Motion::Rightwards_90(uint16_t LeftSpeed,uint16_t RightSpeed)
   Servo::TurnDeg(180);
 }
 
+//L_90 
 void Motion::Leftwards_90(uint16_t LeftSpeed,uint16_t RightSpeed)
 {
   /*If the two Wheels have bias, adjust one of the speed of the Wheel*/
@@ -208,6 +214,7 @@ void Motion::Leftwards_90(uint16_t LeftSpeed,uint16_t RightSpeed)
   Servo::TurnDeg(0);
 }
 
+//R_135
 void Motion::Rightwards_135(uint16_t LeftSpeed,uint16_t RightSpeed)
 {
   /*If the two Wheels have bias, adjust one of the speed of the Wheel*/
@@ -218,6 +225,7 @@ void Motion::Rightwards_135(uint16_t LeftSpeed,uint16_t RightSpeed)
   // Servo::TurnDeg(135);
 }
 
+//L_135
 void Motion::Leftwards_135(uint16_t LeftSpeed,uint16_t RightSpeed)
 {
   /*If the two Wheels have bias, adjust one of the speed of the Wheel*/

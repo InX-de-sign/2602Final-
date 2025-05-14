@@ -358,14 +358,15 @@ TaskHandle_t LineTrackingTaskTCB;
 void LineTrackingTask(void *pvPara) {
   while (true) {
     IR::Init();
-    //1106 testing use
+
+    //1505 testing use
     Exam_State=1;
-    Task=1; //1/2/3/
+    // Task=1; //1/2/3/
     // End_point=8; //task3: 6/8;
-    // Start_point=2; //task4:1/4
+    // Start_point=1; //task4:1/4
+    
     // task3Flag1=true;
     // task3Flag3_2=true;
-    // Navigation::handleTask1();
     // if(Exam_State==0){
     //     LineTracking::stop();
     // }
@@ -380,7 +381,7 @@ void LineTrackingTask(void *pvPara) {
 
 
     //testing1: linetracking
-    //LineTracking::FollowingLine(IR::Tracking(),LeftSpeed,RightSpeed);
+    LineTracking::FollowingLine(IR::Tracking(),LeftSpeed,RightSpeed);
     //testing2: going on bridge
     //LineTracking::FollowingLine(IR::Tracking(), LeftSpeed+300,RightSpeed+300);
 
